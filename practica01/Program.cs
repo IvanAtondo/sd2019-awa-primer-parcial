@@ -1,4 +1,5 @@
 ﻿using System;
+using practica01.Models;
 
 namespace practica01
 {
@@ -6,7 +7,11 @@ namespace practica01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Probando el contexto de base de datos con MySQL");
+            using (var db = new MysqlDbContext())
+            {
+                db.Database.EnsureCreated();
+            }
         }
     }
 }
